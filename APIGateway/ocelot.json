@@ -1,7 +1,4 @@
 {
-  "GlobalConfiguration": {
-    "BaseUrl": "http://c_apigateway"
-  },
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/reservations/{id}",
