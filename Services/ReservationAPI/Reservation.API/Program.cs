@@ -3,25 +3,22 @@ using Reservation.API.Services.ConcreteServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.WebHost.UseUrls("http://*:7001");
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IReservationService, ReservationService>();
 
 
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
 
 if (app.Environment.IsDevelopment())
 {
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseRouting();
 
 app.UseAuthorization();
 
