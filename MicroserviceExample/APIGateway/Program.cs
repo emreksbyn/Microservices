@@ -5,6 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.UseUrls("http://*:1000");
 
+// Solution -> Properties -> Multiple startup projects -> Reservation.API , Contact.API , APIGateway select. 
+
+
 builder.Configuration.AddJsonFile(Path.Combine("ocelot.json"));
 builder.Services.AddControllers();
 

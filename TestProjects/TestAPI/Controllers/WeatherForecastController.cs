@@ -10,7 +10,30 @@ namespace TestAPI.Controllers
         public string Get()
         {
             //throw new Exception("Test hatasi");
-            return "";
+            return "OK";
         }
+
+        [HttpGet("Student")]
+        public Student GetStudent()
+        {
+            return new Student()
+            {
+                Id = 1,
+                Name = "Emre"
+            };
+        }
+
+        [HttpPost("Student")]
+        public Student CreateStudent([FromBody] Student student)
+        {
+
+            return student;
+        }
+    }
+
+    public class Student
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
